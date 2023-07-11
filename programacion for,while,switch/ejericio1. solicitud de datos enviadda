@@ -1,0 +1,60 @@
+Algoritmo ejericio1
+	
+	Definir nombre, apellido como cadena
+	Definir legajo, comision como entero
+	Definir materia, turno como caracter
+	
+	Escribir "Ingrese nombre y apellido: "
+	Leer nombre, apellido
+	
+	Escribir "Ingrese legajo (numérico - longitud 5): "
+	Leer legajo
+	Mientras (legajo < 10000) o (legajo > 99999) Hacer
+		Escribir "El legajo debe tener 5 dígitos"
+		Escribir "Ingrese legajo (numérico - longitud 5): "
+		Leer legajo
+	Fin Mientras
+	
+	Escribir "Ingrese materia a recursar:"
+	Escribir "1. Matemática"
+	Escribir "2. Fisica"
+	Escribir "3. Quimica"
+	Escribir "4. Programación"
+	Leer materia
+	Mientras (materia <> "1") y (materia <> "2") y (materia <> "3") y (materia <> "4") Hacer
+		Escribir "La materia elegida no es válida. Ingrese una opción válida: "
+		Escribir "1. Matemática"
+		Escribir "2. Física"
+		Escribir "3. Química"
+		Escribir "4. Programación"
+		Leer materia
+	Fin Mientras
+	
+	Escribir "Ingrese comisión cursada en el cuatrimestre anterior:"
+	Escribir "1. Comisión A"
+	Escribir "2. Comisión B"
+	Escribir "3. Comisión C"
+	Leer comision
+	Mientras (comision <> 1) y (comision <> 2) y (comision <> 3) Hacer
+		Escribir "La comisión elegida no es válida. Ingrese una opción válida: "
+		Escribir "1. Comisión A"
+		Escribir "2. Comisión B"
+		Escribir "3. Comisión C"
+		Leer comision
+	Fin Mientras
+	
+	Escribir "Ingrese turno de preferencia para recursar:"
+	Escribir "TM. Turno mañana"
+	Escribir "TT. Turno tarde"
+	Escribir "TN. Turno noche"
+	Leer turno
+	Mientras (turno <> "TM") y (turno <> "TT") y (turno <> "TN") Hacer
+		Escribir "El turno ingresado no es válido. Ingrese una opción válida: "
+		Escribir "TM. Turno mañana"
+		Escribir "TT. Turno tarde"
+		Escribir "TN. Turno noche"
+		Leer turnov
+	Fin Mientras
+	
+	Escribir "Los datos ingresados son válidos. La solicitud ha sido enviada."
+FinAlgoritmo
