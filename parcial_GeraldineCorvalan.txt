@@ -1,0 +1,76 @@
+Algoritmo parcial_GeraldineCorvalan
+	//Escribir un programa que capture la producción de 3 plantas para los cinco días hábiles de la semana (lunes a viernes), e indique
+	
+	//a) Qué planta produjo más y cantidad de unidades producidas por esa planta
+	
+	//b) Qué producción se obtuvo por día entre las 3 plantas
+	
+	//Solicitar al usuario que cargue por pantalla la producción en unidades para 
+	//cada día de cada planta y las guarde en un arreglo. Las cantidades producidas no pueden ser negativas
+	
+	//Para obtener que planta produjo más armar la función producción <- planta_mayor_produccion(?) 
+	// y en el proceso principias mostrar los resultados
+	
+	//Para obtener la producción por día de las 3 plantas armar un subproceso que cargue un arreglo de dimensión 5, 
+	// donde se guarde la producción de las 3 plantas por día
+	
+	Definir producciondia, producciontotal, maximaproduccion, plantamasproduccion como entero
+	
+	
+	Dimension plantas[3,5]
+	dimension producciondia[5]
+	
+	   
+	
+	produccion(producciondia, producciontotal, maximaproduccion, plantamasproduccion,plantas,dias,guardar)
+	
+FinAlgoritmo
+
+Funcion produccion(producciondia, producciontotal, maximaproduccion, plantamasproduccion,plantas,dias,guardar)
+	
+    
+    Para i <- 0 hasta 3-1 con paso 1 Hacer //calcular cant de produccion de las plantas 
+		para j<-0 hasta 5-1 con paso 1 hacer  // calcular la produccion por dia de cada planta 
+        Escribir "Ingrese la producción de la planta ", i+1 , " para el día ", j+1
+        Leer plantas[i,j]
+	
+
+		
+        Mientras plantas[i,j] < 0 Hacer
+            Escribir "La producción no puede ser negativa, ingrese la produccion nuevamente"
+            Leer plantas[i,j]
+        Fin Mientras
+		
+	Fin Para
+finpara
+			
+		Para i <- 0 hasta 3-1 con paso 1 Hacer //guardar en otro arreglo
+			para j<-0 hasta 5-1 con paso 1 hacer 
+      producciondia[i]<-  producciondia[i]+plantas[i,j]
+		
+    
+finpara 
+finpara
+
+Para i <- 0 hasta 3-1 con paso 1 Hacer 
+	para j<-0 hasta 5-1 con paso 1 hacer
+Si plantas[i,j] > maximaproduccion entonces //calcular la mayor produccion
+	maximaproduccion <- plantas[i,j]
+	plantamasproduccion <- i 
+	
+FinSi
+FinPara
+finpara
+
+//mostrar
+	
+    Escribir "La planta con mayor producción fue la planta ", plantamasproduccion+1, " con ",maximaproduccion, " unidades producidas"
+	Escribir "produccion de la planta con mas produccion"
+    Para i <- 0 hasta 5-1 con paso 1 hacer
+        Escribir "Producción del día ", i+1, ":",  plantas[plantamasproduccion,i]
+    Fin Para
+	
+	
+FinFuncion
+
+
